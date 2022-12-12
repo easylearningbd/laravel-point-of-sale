@@ -145,12 +145,12 @@
                                     <span>Settings</span>
                                 </a>
     
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="fe-lock"></i>
-                                    <span>Lock Screen</span>
-                                </a>
-    
+            <!-- item-->
+            <a href="{{ route('change.password') }}" class="dropdown-item notify-item">
+                <i class="fe-lock"></i>
+                <span>Change Password </span>
+            </a>
+
                                 <div class="dropdown-divider"></div>
     
                                 <!-- item-->
