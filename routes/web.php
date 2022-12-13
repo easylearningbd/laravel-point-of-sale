@@ -49,4 +49,16 @@ Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name
 
 Route::post('/update/password', [AdminController::class, 'UpdatePassword'])->name('update.password');
 
+
+
+/// Employee All Route 
+Route::controller(EmployeeController::class)->group(function(){
+
+Route::get('/all/employee','AllEmployee')->name('all.employee');
+
+});
+
+
+
+
 }); // End User Middleware 
