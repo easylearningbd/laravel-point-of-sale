@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="" class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee </a>  
+      <a href="{{ route('add.employee') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Employee </a>  
                                         </ol>
                                     </div>
                                     <h4 class="page-title">All Employee</h4>
