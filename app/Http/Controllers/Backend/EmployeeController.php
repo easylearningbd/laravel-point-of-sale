@@ -29,8 +29,16 @@ class EmployeeController extends Controller
             'phone' => 'required|max:200',
             'address' => 'required|max:400',
             'salary' => 'required|max:200',
-            'vacation' => 'required|max:200',  
-        ]);
+            'vacation' => 'required|max:200', 
+            'experience' => 'required', 
+            'image' => 'required',  
+        ],
+        
+        [
+            'name.required' => 'This Employee Name Field Is Required',
+        ]
+
+    );
  
         $image = $request->file('image');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
@@ -64,7 +72,7 @@ class EmployeeController extends Controller
 
 
 
-    
+
 
 }
  
