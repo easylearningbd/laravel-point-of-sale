@@ -64,29 +64,24 @@
                                 </div>
                             </li>
 
-                            <li>
-                                <a href="#sidebarEmail" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-email-multiple-outline"></i>
-                                    <span> Email </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarEmail">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="email-inbox.html">Inbox</a>
-                                        </li>
-                                        <li>
-                                            <a href="email-read.html">Read Email</a>
-                                        </li>
-                                        <li>
-                                            <a href="email-compose.html">Compose Email</a>
-                                        </li>
-                                        <li>
-                                            <a href="email-templates.html">Email Templates</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+        <li>
+            <a href="#sidebarEmail" data-bs-toggle="collapse">
+                <i class="mdi mdi-email-multiple-outline"></i>
+                <span> Supplier Manage </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarEmail">
+                <ul class="nav-second-level">
+                    <li>
+                        <a href="{{ route('all.supplier') }}">All Supplier</a>
+                    </li>
+                    <li>
+                        <a href="email-read.html">Add Supplier</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </li>
 
                              
                           
