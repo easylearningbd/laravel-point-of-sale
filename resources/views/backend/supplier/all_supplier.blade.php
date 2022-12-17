@@ -54,6 +54,8 @@
 <a href="{{ route('edit.supplier',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
 <a href="{{ route('delete.supplier',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
 
+<a href="{{ route('details.supplier',$item->id) }}" class="btn btn-info rounded-pill waves-effect waves-light">Details</a>
+
                 </td>
             </tr>
             @endforeach
