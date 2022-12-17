@@ -68,8 +68,8 @@ Route::get('/delete/employee/{id}','DeleteEmployee')->name('delete.employee');
 Route::controller(CustomerController::class)->group(function(){
 
 Route::get('/all/customer','AllCustomer')->name('all.customer');
-Route::get('/add/employee','AddEmployee')->name('add.employee');
-Route::post('/store/employee','StoreEmployee')->name('employee.store');
+Route::get('/add/customer','AddCustomer')->name('add.customer');
+Route::post('/store/customer','StoreCustomer')->name('customer.store');
 Route::get('/edit/employee/{id}','EditEmployee')->name('edit.employee');
 Route::post('/update/employee','UpdateEmployee')->name('employee.update');
 Route::get('/delete/employee/{id}','DeleteEmployee')->name('delete.employee');
