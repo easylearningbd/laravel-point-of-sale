@@ -70,6 +70,100 @@ class SupplierController extends Controller
     } // End Method 
 
 
+ public function EditSupplier($id){
+
+        $supplier = Supplier::findOrFail($id);
+        return view('backend.supplier.edit_supplier',compact('supplier'));
+
+    } // End Method 
+
+
+     public function UpdateSupplier(Request $request){
+
+        $supplier_id = $request->id;
+
+        if ($request->file('image')) {
+
+        $image = $request->file('image');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(300,300)->save('upload/supplier/'.$name_gen);
+        $save_url = 'upload/supplier/'.$name_gen;
+
+
+        Supplier::findOrFail($supplier_id)->update([
+
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'shopname' => $request->shopname,
+            'type' => $request->type,
+            'account_holder' => $request->account_holder,
+            'account_number' => $request->account_number,
+            'bank_name' => $request->bank_name,
+            'bank_branch' => $request->bank_branch,
+            'city' => $request->city,
+            'image' => $save_url,
+            'created_at' => Carbon::now(), 
+
+        ]);
+
+         $notification = array(
+            'message' => 'Supplier Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.supplier')->with($notification); 
+             
+        } else{
+
+            Supplier::findOrFail($supplier_id)->update([
+
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'shopname' => $request->shopname,
+            'type' => $request->type,
+            'account_holder' => $request->account_holder,
+            'account_number' => $request->account_number,
+            'bank_name' => $request->bank_name,
+            'bank_branch' => $request->bank_branch,
+            'city' => $request->city, 
+            'created_at' => Carbon::now(), 
+
+        ]);
+
+         $notification = array(
+            'message' => 'Supplier Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.supplier')->with($notification); 
+
+        } // End else Condition  
+
+
+    } // End Method 
+
+
+
+ public function DeleteSupplier($id){
+
+        $supplier_img = Supplier::findOrFail($id);
+        $img = $supplier_img->image;
+        unlink($img);
+
+        Supplier::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Supplier Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+    } // End Method 
 
 
 
