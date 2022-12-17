@@ -76,7 +76,7 @@
                         <a href="{{ route('all.supplier') }}">All Supplier</a>
                     </li>
                     <li>
-                        <a href="email-read.html">Add Supplier</a>
+                        <a href="{{ route('add.supplier') }}">Add Supplier</a>
                     </li>
                     
                 </ul>
