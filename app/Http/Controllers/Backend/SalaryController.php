@@ -18,7 +18,49 @@ class SalaryController extends Controller
     }// End Method 
 
 
+    public function AdvanceSalaryStore(Request $request){
 
+        $validateData = $request->validate([
+            'month' => 'required',
+            'year' => 'required',
+            'advance_salary' => 'required|max:255', 
+        ]);
+
+        $month = $request->month;
+        $employee_id = $request->employee_id;
+
+        $advanced = AdvanceSalary::where('month',$month)->where('employee_id',$employee_id)->first();
+
+        if ($advanced === NULL) {
+            
+            AdvanceSalary::insert([
+                'employee_id' => $request->employee_id,
+                'month' => $request->month,
+                'year' => $request->year,
+                'advance_salary' => $request->advance_salary,
+                'created_at' => Carbon::now(), 
+            ]);
+
+         $notification = array(
+            'message' => 'Advance Salary Paid Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification); 
+
+
+        } else{
+
+             $notification = array(
+            'message' => 'Advance Already Paid',
+            'alert-type' => 'warning'
+        );
+
+        return redirect()->back()->with($notification); 
+
+        }
+
+    }// End Method 
 
 
 

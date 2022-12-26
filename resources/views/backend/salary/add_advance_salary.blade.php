@@ -37,7 +37,7 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form method="post" action="{{ route('employee.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('advance.salary.store') }}" >
         	@csrf
 
             <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Advance Salary</h5>
