@@ -146,6 +146,12 @@ class SalaryController extends Controller
     }// End Method 
 
 
+    public function MonthSalary(){
+
+        $paidsalary = PaySalary::latest()->get();
+        return view('backend.salary.month_salary',compact('paidsalary'));
+
+    }// End Method 
 
 }
  
