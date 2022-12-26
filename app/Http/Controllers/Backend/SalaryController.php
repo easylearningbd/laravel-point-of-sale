@@ -112,6 +112,14 @@ class SalaryController extends Controller
     }// End Method 
 
 
+    public function PayNowSalary($id){
+
+        $paysalary = Employee::findOrFail($id);
+        return view('backend.salary.paid_salary',compact('paysalary'));
+
+    }// End Method 
+
+
 
 }
  
