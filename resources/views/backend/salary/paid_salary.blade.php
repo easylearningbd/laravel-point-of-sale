@@ -37,8 +37,10 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form method="post" action="{{ route('advance.salary.store') }}" >
+        <form method="post" action="{{ route('employe.salary.store') }}" >
         	@csrf
+
+            <input type="hidden" name="id" value="{{ $paysalary->id }}">
 
             <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Paid Salary </h5>
 
@@ -57,6 +59,7 @@
         <div class="mb-3">
             <label for="firstname" class="form-label">Salary Month    </label>
           <strong style="color: #fff;">{{ date("F", strtotime('-1 month')) }}</strong>
+          <input type="hidden" name="month" value="{{ date("F", strtotime('-1 month')) }}">
                
         </div>
     </div>
@@ -66,7 +69,7 @@
         <div class="mb-3">
             <label for="firstname" class="form-label">Employe Salary    </label>
           <strong style="color: #fff;">{{ $paysalary->salary }}</strong>
-              
+              <input type="hidden" name="paid_amount" value="{{ $paysalary->salary }}">
         </div>
     </div>
 
@@ -75,7 +78,7 @@
         <div class="mb-3">
             <label for="firstname" class="form-label">Advnace Salary    </label>
           <strong style="color: #fff;">{{ $paysalary['advance']['advance_salary'] }}</strong>
-              
+              <input type="hidden" name="advance_salary" value="{{ $paysalary['advance']['advance_salary'] }}">
         </div>
     </div>
 
@@ -94,7 +97,7 @@
             @endif
 
           </strong>
-              
+            <input type="hidden" name="due_salary" value="{{ round($amount) }}">    
         </div>
     </div>
  
