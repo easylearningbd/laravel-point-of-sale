@@ -51,7 +51,7 @@
                 <td>{{ $item['employee']['salary'] }}</td>
                 <td>{{ $item->advance_salary }}</td>
                 <td>
-<a href="{{ route('edit.employee',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
+<a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
 <a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
 
                 </td>
