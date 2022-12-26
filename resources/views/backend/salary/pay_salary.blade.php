@@ -50,11 +50,24 @@
                 <td>{{ $item->name }}</td>
                 <td><span class="badge bg-info"> {{ date("F", strtotime('-1 month')) }} </span> </td>
                 <td> {{ $item->salary }} </td>
-                <td> </td>
-                <td> </td>
                 <td>
-<a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
-<a href="{{ route('delete.employee',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+                    @if($item['advance']['advance_salary'] == NULL )
+                        <p>No Advance</p>
+                    @else
+                    {{ $item['advance']['advance_salary'] }}
+                    @endif
+
+                 </td>
+                <td>
+                    @php
+                    $amount = $item->salary - $item['advance']['advance_salary'];
+                    @endphp
+                    <strong style="color: #fff;"> {{ round($amount) }} </strong>
+
+                 </td>
+                <td>
+<a href="{{ route('edit.advance.salary',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Pay Now</a>
+ 
 
                 </td>
             </tr>

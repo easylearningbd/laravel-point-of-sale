@@ -23,8 +23,7 @@ class SalaryController extends Controller
 
         $validateData = $request->validate([
             'month' => 'required',
-            'year' => 'required',
-            'advance_salary' => 'required|max:255', 
+            'year' => 'required', 
         ]);
 
         $month = $request->month;
