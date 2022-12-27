@@ -118,7 +118,7 @@
         <li>
             <a href="#attendence" data-bs-toggle="collapse">
                 <i class="mdi mdi-email-multiple-outline"></i>
-                <span> Employee Salary </span>
+                <span> Employee Attendence </span>
                 <span class="menu-arrow"></span>
             </a>
             <div class="collapse" id="attendence">
