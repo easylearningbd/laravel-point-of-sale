@@ -72,7 +72,7 @@
     <tbody>
        @foreach ($editData as $key => $item)
        <tr class="text-center">
-          <input type="hidden" name="employee_id[]" value="{{$item->id}}" class="employee_id">
+          <input type="hidden" name="employee_id[]" value="{{$item->employee_id}}" class="employee_id">
           <td>{{$key+1}}</td>
           <td>{{$item['employee']['name']}}</td>
           <td colspan="3">
