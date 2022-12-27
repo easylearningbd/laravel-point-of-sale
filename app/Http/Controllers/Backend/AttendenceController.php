@@ -47,5 +47,13 @@ class AttendenceController extends Controller
     }// End Method 
 
 
+    public function EditEmployeeAttendence($date){
+         $employees = Employee::all();
+         $editData = Attendence::where('date',$date)->get();
+         return view('backend.attendence.edit_employee_attend',compact('employees','editData'));
+
+    }// End Method 
+
+
 }
  

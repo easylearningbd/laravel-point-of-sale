@@ -43,7 +43,7 @@
                 <td>{{ $key+1 }}</td> 
                 <td>{{ date('Y-m-d', strtotime($item->date))  }}</td>
                 <td>
-<a href=" " class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
+<a href="{{ route('employee.attend.edit',$item->date) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
 <a href=" " class="btn btn-danger rounded-pill waves-effect waves-light" >View</a>
 
                 </td>
