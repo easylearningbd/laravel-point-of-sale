@@ -124,7 +124,7 @@ Route::get('/add/employee/attend','AddEmployeeAttendence')->name('add.employee.a
 Route::post('/employee/attend/store','EmployeeAttendenceStore')->name('employee.attend.store'); 
 
 Route::get('/edit/employee/attend/{date}','EditEmployeeAttendence')->name('employee.attend.edit'); 
-
+Route::get('/view/employee/attend/{date}','ViewEmployeeAttendence')->name('employee.attend.view'); 
 });
 
 
