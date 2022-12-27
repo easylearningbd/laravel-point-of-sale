@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\EmployeeController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\SupplierController;
 use App\Http\Controllers\Backend\SalaryController;
+use App\Http\Controllers\Backend\AttendenceController;
 
 /* 
 |--------------------------------------------------------------------------
@@ -113,6 +114,15 @@ Route::post('/employe/salary/store','EmployeSalaryStore')->name('employe.salary.
 Route::get('/month/salary','MonthSalary')->name('month.salary');
 
 });
+
+
+///Attendence All Route 
+Route::controller(AttendenceController::class)->group(function(){
+
+Route::get('/employee/attend/list','EmployeeAttendenceList')->name('employee.attend.list'); 
+
+});
+
 
 
 

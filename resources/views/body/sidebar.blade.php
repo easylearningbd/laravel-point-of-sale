@@ -112,6 +112,25 @@
             </div>
         </li>
 
+
+
+
+        <li>
+            <a href="#attendence" data-bs-toggle="collapse">
+                <i class="mdi mdi-email-multiple-outline"></i>
+                <span> Employee Salary </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="attendence">
+                <ul class="nav-second-level">
+                    <li>
+                        <a href="{{ route('employee.attend.list') }}">Employee Attendence List </a>
+                    </li>
+                
+                </ul>
+            </div>
+        </li>
+
                              
                           
 
