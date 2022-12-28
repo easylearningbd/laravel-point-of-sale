@@ -163,7 +163,7 @@
                     </li>
 
                      <li>
-                        <a href="{{ route('all.category') }}">Add Product </a>
+                        <a href="{{ route('add.product') }}">Add Product </a>
                     </li>
                 
                 </ul>
