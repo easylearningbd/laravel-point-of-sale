@@ -48,8 +48,8 @@
                 <td>{{ $key+1 }}</td>
                 <td> <img src="{{ asset($item->product_image) }}" style="width:50px; height: 40px;"> </td>
                 <td>{{ $item->product_name }}</td>
-                <td>{{ $item->category_id }}</td>
-                <td>{{ $item->supplier_id }}</td>
+                <td>{{ $item['category']['category_name'] }}</td>
+                <td>{{ $item['supllier']['name'] }}</td>
                 <td>{{ $item->product_code }}</td>
                 <td>{{ $item->selling_price }}</td>
                 <td>
