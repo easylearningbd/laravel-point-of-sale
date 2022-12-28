@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-      <a href="{{ route('add.customer') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Add Category </a>  
+   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal">Add Category</button> 
                                         </ol>
                                     </div>
                                     <h4 class="page-title">All Category</h4>
@@ -64,6 +64,35 @@
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
+
+
+                                                        <!-- Signup modal content -->
+<div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body"> 
+
+  <form class="px-3" method="post" action="{{ route('category.store') }}">
+                    @csrf
+
+                    <div class="mb-3">
+             <label for="username" class="form-label">Category Name</label>
+     <input class="form-control" type="text" name="category_name" placeholder="Add Category ">
+                    </div>
+ 
+
+                    <div class="mb-3 text-center">
+                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 @endsection 

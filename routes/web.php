@@ -132,7 +132,8 @@ Route::get('/view/employee/attend/{date}','ViewEmployeeAttendence')->name('emplo
 ///Category All Route 
 Route::controller(CategoryController::class)->group(function(){
 
-Route::get('/all/category','AllCategory')->name('all.category'); 
+Route::get('/all/category','AllCategory')->name('all.category');
+Route::post('/store/category','StoreCategory')->name('category.store');  
  
 });
 
