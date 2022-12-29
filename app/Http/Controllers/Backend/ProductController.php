@@ -154,5 +154,13 @@ class ProductController extends Controller
     } // End Method 
 
 
+    public function BarcodeProduct($id){
+
+        $product = Product::findOrFail($id);
+        return view('backend.product.barcode_product',compact('product'));
+
+    }// End Method 
+
+
 
 }
