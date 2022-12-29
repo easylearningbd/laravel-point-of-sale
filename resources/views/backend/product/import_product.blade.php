@@ -13,7 +13,7 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-        <a href="{{ route('add.product') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Download Xlsx</a>  
+        <a href="{{ route('export') }}" class="btn btn-primary rounded-pill waves-effect waves-light">Download Xlsx</a>  
                                             
                                         </ol>
                                     </div>

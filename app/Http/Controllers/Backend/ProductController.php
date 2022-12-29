@@ -11,6 +11,9 @@ use Intervention\Image\Facades\Image;
 use Carbon\Carbon; 
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 
+use App\Exports\ProductExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class ProductController extends Controller
 {
    public function AllProduct(){
@@ -168,6 +171,13 @@ class ProductController extends Controller
     public function ImportProduct(){
 
         return view('backend.product.import_product');
+
+    }// End Method 
+
+
+    public function Export(){
+
+        return Excel::download(new ProductExport,'products.xlsx');
 
     }// End Method 
 
