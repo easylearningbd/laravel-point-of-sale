@@ -156,7 +156,7 @@ Route::get('/barcode/product/{id}','BarcodeProduct')->name('barcode.product');
 
 Route::get('/import/product','ImportProduct')->name('import.product');
 Route::get('/export','Export')->name('export');
-
+Route::post('/import','Import')->name('import');
 
 
 });
