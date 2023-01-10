@@ -10,7 +10,8 @@ use App\Http\Controllers\Backend\SalaryController;
 use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
-
+use App\Http\Controllers\Backend\ExpenseController;
+ 
 /* 
 |--------------------------------------------------------------------------
 | Web Routes
@@ -162,6 +163,12 @@ Route::post('/import','Import')->name('import');
 });
 
 
+///Category All Route 
+Route::controller(ExpenseController::class)->group(function(){
+
+Route::get('/add/expense','AddExpense')->name('add.expense');
+ 
+});
 
 
 
