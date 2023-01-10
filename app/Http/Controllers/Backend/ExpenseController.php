@@ -82,5 +82,23 @@ class ExpenseController extends Controller
     }// End Method 
 
 
+    public function MonthExpense(){
+
+        $month = date("F");
+        $monthexpense = Expense::where('month',$month)->get();
+        return view('backend.expense.month_expense',compact('monthexpense'));
+
+    }// End Method
+
+
+    public function YearExpense(){
+
+         $year = date("Y");
+        $yearexpense = Expense::where('year',$year)->get();
+        return view('backend.expense.year_expense',compact('yearexpense'));
+
+    }// End Method
+
+
 }
  

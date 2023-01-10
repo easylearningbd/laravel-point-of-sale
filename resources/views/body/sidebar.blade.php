@@ -193,10 +193,10 @@
                 <a href="{{ route('today.expense') }}">Today Expense</a>
             </li>
             <li>
-                <a href="auth-login-2.html">Monthly Expense</a>
+                <a href="{{ route('month.expense') }}">Monthly Expense</a>
             </li>
             <li>
-                <a href="auth-login-2.html">Yearly Expense</a>
+                <a href="{{ route('year.expense') }}">Yearly Expense</a>
             </li>
             
         </ul>
