@@ -59,7 +59,7 @@
                 <td>{{ $item->month }}</td>
                 <td>{{ $item->year }}</td> 
                 <td>
-<a href="{{ route('edit.customer',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a> 
+<a href="{{ route('edit.expense',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a> 
 
                 </td>
             </tr>
