@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\AttendenceController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ExpenseController;
+use App\Http\Controllers\Backend\PosController;
  
 /* 
 |--------------------------------------------------------------------------
@@ -163,7 +164,7 @@ Route::post('/import','Import')->name('import');
 });
 
 
-///Category All Route 
+///Expense All Route 
 Route::controller(ExpenseController::class)->group(function(){
 
  Route::get('/add/expense','AddExpense')->name('add.expense');
@@ -175,6 +176,16 @@ Route::get('/month/expense','MonthExpense')->name('month.expense');
 Route::get('/year/expense','YearExpense')->name('year.expense');
 
 });
+
+
+///Expense All Route 
+Route::controller(PosController::class)->group(function(){
+
+ Route::get('/pos','Pos')->name('pos');
+ 
+
+});
+
 
 
 
