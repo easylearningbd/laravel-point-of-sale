@@ -50,9 +50,13 @@
                 <tr>
                     <td>{{ $cart->name }}</td>
                     <td>
-    <input type="number" value="{{ $cart->qty }}" style="width:40px;" min="1">
- <button type="submit" class="btn btn-sm btn-success" style="margin-top:-2px ;"> <i class="fas fa-check"></i> </button>                 
+       <form method="post" action="{{ url('/cart-update/'.$cart->rowId) }}">
+       @csrf
 
+    <input type="number" name="qty" value="{{ $cart->qty }}" style="width:40px;" min="1">
+ <button type="submit" class="btn btn-sm btn-success" style="margin-top:-2px ;"> <i class="fas fa-check"></i> </button>   
+
+   </form> 
                     </td>
                     <td>{{ $cart->price }}</td>
                     <td>{{ $cart->price*$cart->qty }}</td>
@@ -66,10 +70,10 @@
 
     <div class="bg-primary">
         <br>
-        <p style="font-size:18px; color:#fff"> Quantity : 3434 </p>
-        <p style="font-size:18px; color:#fff"> SubTotal : 3434 </p>
-        <p style="font-size:18px; color:#fff"> Vat : 3434 </p>
-        <p><h2 class="text-white"> Total </h2> <h1 class="text-white"> 3434</h1>   </p>
+        <p style="font-size:18px; color:#fff"> Quantity : {{ Cart::count() }} </p>
+        <p style="font-size:18px; color:#fff"> SubTotal : {{ Cart::subtotal() }} </p>
+        <p style="font-size:18px; color:#fff"> Vat : {{ Cart::tax() }} </p>
+        <p><h2 class="text-white"> Total </h2> <h1 class="text-white"> {{ Cart::total() }}</h1>   </p>
          <br>
     </div>
 
