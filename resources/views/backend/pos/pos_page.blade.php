@@ -41,17 +41,24 @@
                     <th>Action</th>
                 </tr>
             </thead>
+
+            @php
+            $allcart = Cart::content();
+            @endphp
             <tbody>
+                @foreach($allcart as $cart)
                 <tr>
-                    <td>Mark</td>
+                    <td>{{ $cart->name }}</td>
                     <td>
-    <input type="number" value="0" style="width:40px;" min="1">
+    <input type="number" value="{{ $cart->qty }}" style="width:40px;" min="1">
+ <button type="submit" class="btn btn-sm btn-success" style="margin-top:-2px ;"> <i class="fas fa-check"></i> </button>                 
+
                     </td>
-                    <td>334</td>
-                    <td>43543</td>
+                    <td>{{ $cart->price }}</td>
+                    <td>{{ $cart->price*$cart->qty }}</td>
                     <td> <a href=""><i class="fas fa-trash-alt" style="color:#ffffff"></i></a> </td>
                 </tr>
-             
+                @endforeach
             </tbody>
         </table>
     </div>
