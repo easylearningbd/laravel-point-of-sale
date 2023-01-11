@@ -60,7 +60,7 @@
                     </td>
                     <td>{{ $cart->price }}</td>
                     <td>{{ $cart->price*$cart->qty }}</td>
-                    <td> <a href=""><i class="fas fa-trash-alt" style="color:#ffffff"></i></a> </td>
+     <td> <a href="{{ url('/cart-remove/'.$cart->rowId) }}"><i class="fas fa-trash-alt" style="color:#ffffff"></i></a> </td>
                 </tr>
                 @endforeach
             </tbody>

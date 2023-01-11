@@ -65,5 +65,19 @@ class PosController extends Controller
     } // End Method 
 
 
+    public function CartRemove($rowId){
+
+        Cart::remove($rowId);
+
+        $notification = array(
+            'message' => 'Cart Remove Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    } // End Method 
+
+
 }
  
