@@ -179,7 +179,7 @@ Route::get('/year/expense','YearExpense')->name('year.expense');
 });
 
 
-///Expense All Route 
+///Pos All Route 
 Route::controller(PosController::class)->group(function(){
 
  Route::get('/pos','Pos')->name('pos');
@@ -192,6 +192,17 @@ Route::controller(PosController::class)->group(function(){
 
 
 });
+
+
+///Order All Route 
+Route::controller(OrderController::class)->group(function(){
+
+ Route::post('/final-invoice','FinalInvoice');
+ 
+
+
+});
+
 
 
 
