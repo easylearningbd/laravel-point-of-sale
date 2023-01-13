@@ -68,6 +68,16 @@ class OrderController extends Controller
     }// End Method 
 
 
+    public function OrderDetails($order_id){
+
+        $order = Order::where('id',$order_id)->first();
+
+        $orderItem = Orderdetails::with('product')->where('order_id',$order_id)->orderBy('id','DESC')->get();
+        return view('backend.order.order_details',compact('order','orderItem'));
+
+    }// End Method 
+
+
 
 
 }
