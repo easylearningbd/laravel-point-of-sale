@@ -70,23 +70,23 @@
     <tr>
         <td>
           <p class="font" style="margin-left: 20px;">
-           <strong>Customer Name:</strong>   <br>
-           <strong>Customer Email:</strong>   <br>
-           <strong>Customer Phone:</strong>   <br>
+           <strong>Customer Name:</strong> {{ $order->customer->name }}  <br>
+           <strong>Customer Email:</strong> {{ $order->customer->email }}   <br>
+           <strong>Customer Phone:</strong> {{ $order->customer->phone }}   <br>
           
-           <strong>Address:</strong>  
-            <strong>Shop Name:</strong>  
+           <strong>Address: {{ $order->customer->address }} </strong>  
+            <strong>Shop Name: {{ $order->customer->shopname }} </strong>  
             
          </p>
         </td>
         <td>
           <p class="font">
-            <h3><span style="color: green;">Invoice:</span> #  </h3>
-            Order Date:   <br>
-            Order Status:   <br>
-            Payment Status:   <br>
-            Total Pay :   <br>
-            Total Due :   </span>
+            <h3><span style="color: green;">Invoice:</span> # {{ $order->invoice_no }}  </h3>
+            Order Date:  {{ $order->order_date }} <br>
+            Order Status:  {{ $order->order_status }} <br>
+            Payment Status: {{ $order->payment_status }}  <br>
+            Total Pay :  {{ $order->pay }} <br>
+            Total Due :  {{ $order->due }} </span>
 
          </p>
         </td>
@@ -112,17 +112,17 @@
      @foreach($orderItem as $item)
       <tr class="font">
         <td align="center">
-            <img src=" " height="50px;" width="50px;" alt="">
+            <img src="{{ public_path($item->product->product_image) }} " height="50px;" width="50px;" alt="">
         </td>
-        <td align="center"> </td>
+        <td align="center"> {{ $item->product->product_name }} </td>
         
-        <td align="center"> </td>
-        <td align="center"> </td>
+        <td align="center"> {{ $item->product->product_code }} </td>
+        <td align="center"> {{ $item->quantity }} </td>
 
          
         
-        <td align="center">$ </td>
-         <td align="center">$ </td>
+        <td align="center">${{ $item->product->selling_price }} </td>
+         <td align="center">$ {{ $item->total }}</td>
       </tr>
       @endforeach
     </tbody>
@@ -131,8 +131,8 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span>$ </h2>
-            <h2><span style="color: green;">Total:</span> $ </h2>
+<h2><span style="color: green;">Subtotal:</span>$ {{ $order->total }} </h2>
+<h2><span style="color: green;">Total:</span> $ {{ $order->total }} </h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>
