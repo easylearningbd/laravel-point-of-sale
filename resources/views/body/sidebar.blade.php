@@ -183,6 +183,29 @@
             </div>
         </li>
 
+
+
+ <li>
+    <a href="#orders" data-bs-toggle="collapse">
+        <i class="mdi mdi-email-multiple-outline"></i>
+        <span> Orders  </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="orders">
+        <ul class="nav-second-level">
+            <li>
+                <a href="{{ route('pending.order') }}">Pending Orders </a>
+            </li>
+
+             <li>
+                <a href="{{ route('add.product') }}">Complete Orders </a>
+            </li>
+            
+        
+        </ul>
+    </div>
+</li>
+
                              
                           
 
