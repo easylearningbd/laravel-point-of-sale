@@ -202,7 +202,7 @@ Route::controller(OrderController::class)->group(function(){
  Route::get('/order/details/{order_id}','OrderDetails')->name('order.details');
  Route::post('/order/status/update','OrderStatusUpdate')->name('order.status.update');
 
-
+ Route::get('/complete/order','CompleteOrder')->name('complete.order');
 
 });
 
