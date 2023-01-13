@@ -37,8 +37,10 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form method="post" action="{{ route('customer.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('order.status.update') }}" enctype="multipart/form-data">
         	@csrf
+
+            <input type="hidden" name="id" value="{{ $order->id }}">
 
             <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Order Details</h5>
 
@@ -132,6 +134,59 @@
         </form>
     </div>
     <!-- end settings content-->
+
+
+   <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                     
+                    
+                    <table class="table dt-responsive nowrap w-100">
+                        <thead>
+                            <tr> 
+                                <th>Image</th>
+                                <th>Product Name</th>
+                                <th>Product Code</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total(+vat)</th> 
+                            </tr>
+                        </thead>
+                    
+    
+        <tbody>
+            @foreach($orderItem as $item)
+            <tr>
+                
+                <td> <img src="{{ asset($item->product->product_image) }}" style="width:50px; height: 40px;"> </td>
+                <td>{{ $item->product->product_name }}</td>
+                <td>{{ $item->product->product_code }}</td>
+                <td>{{ $item->quantity }}</td>
+                <td>{{ $item->product->selling_price }}</td>
+                <td>{{ $item->total }}</td> 
+            </tr>
+            @endforeach
+        </tbody>
+                    </table>
+
+                </div> <!-- end card body-->
+            </div> <!-- end card -->
+        </div><!-- end col-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
                                        
                                     </div>

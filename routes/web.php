@@ -200,6 +200,9 @@ Route::controller(OrderController::class)->group(function(){
  Route::post('/final-invoice','FinalInvoice');
  Route::get('/pending/order','PendingOrder')->name('pending.order');
  Route::get('/order/details/{order_id}','OrderDetails')->name('order.details');
+ Route::post('/order/status/update','OrderStatusUpdate')->name('order.status.update');
+
+
 
 });
 
