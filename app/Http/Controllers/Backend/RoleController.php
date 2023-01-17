@@ -82,6 +82,39 @@ class RoleController extends Controller
         return redirect()->back()->with($notification);
 
     }// End Method 
+    ////////////////////// Roles All Method ///////////
+
+
+    public function AllRoles(){
+
+         $roles = Role::all();
+        return view('backend.pages.roles.all_roles',compact('roles'));
+
+    }// End Method 
+
+
+    public function AddRoles(){
+
+        return view('backend.pages.roles.add_roles');
+
+    }// End Method 
+
+
+     public function StoreRoles(Request $request){
+
+        $role = Role::create([
+            'name' => $request->name, 
+
+        ]);
+
+        $notification = array(
+            'message' => 'Role Added Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.roles')->with($notification);
+
+    }// End Method 
 
 
 
