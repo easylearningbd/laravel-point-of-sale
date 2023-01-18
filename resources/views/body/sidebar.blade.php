@@ -244,6 +244,10 @@
              <li>
                 <a href="{{ route('add.roles.permission') }}">Roles in Permission </a>
             </li>
+
+             <li>
+                <a href="{{ route('all.roles.permission') }}">All Roles in Permission </a>
+            </li>
  
         
         </ul>
