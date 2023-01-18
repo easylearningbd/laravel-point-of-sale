@@ -44,7 +44,7 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form id="myForm" method="post" action="{{ route('permission.store') }}" enctype="multipart/form-data">
+        <form id="myForm" method="post" action="{{ route('role.permission.store') }}" enctype="multipart/form-data">
             @csrf
 
             <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Role In Permission</h5>
@@ -54,7 +54,7 @@
         <div class="col-md-6">
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">All Roles </label>
-            <select name="group_name" class="form-select" id="example-select">
+            <select name="role_id" class="form-select" id="example-select">
          <option selected disabled >Select Roles  </option>
          @foreach($roles as $role)          
         <option value="{{ $role->id }}"> {{ $role->name }}</option> 

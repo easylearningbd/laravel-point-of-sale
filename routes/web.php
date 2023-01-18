@@ -243,6 +243,7 @@ Route::post('/update/roles','UpdateRoles')->name('roles.update');
 Route::controller(RoleController::class)->group(function(){
 
  Route::get('/add/roles/permission','AddRolesPermission')->name('add.roles.permission');
+  Route::post('/role/permission/store','StoreRolesPermission')->name('role.permission.store');
  
 });
 
