@@ -44,7 +44,7 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form id="myForm" method="post" action="{{ route('role.permission.store') }}" enctype="multipart/form-data">
+        <form id="myForm" method="post" action="{{ route('role.permission.update',$role->id) }}" enctype="multipart/form-data">
             @csrf
  
 
