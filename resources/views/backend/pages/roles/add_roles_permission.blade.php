@@ -58,33 +58,41 @@
     </div>
 
        <div class="form-check mb-2 form-check-primary">
-        <input class="form-check-input" type="checkbox" value="" id="customckeck15" checked="">
+        <input class="form-check-input" type="checkbox" value="" id="customckeck15"  >
         <label class="form-check-label" for="customckeck15">Primary</label>
        </div>
  
         <hr>
 
+        @foreach($permission_groups as $group)
         <div class="row">
             <div class="col-3">
 
                 <div class="form-check mb-2 form-check-primary">
-        <input class="form-check-input" type="checkbox" value="" id="customckeck1" checked="">
-        <label class="form-check-label" for="customckeck1">Primary</label>
+        <input class="form-check-input" type="checkbox" value="" id="customckeck1"  >
+        <label class="form-check-label" for="customckeck1">{{ $group->group_name }}</label>
        </div>
 
             </div>
 
             <div class="col-9">
 
-                <div class="form-check mb-2 form-check-primary">
-        <input class="form-check-input" type="checkbox" value="" id="customckeck1" checked="">
-        <label class="form-check-label" for="customckeck1">Primary</label>
+    @php
+    $permissions = App\Models\User::getpermissionByGroupName($group->group_name);
+    @endphp            
+
+        @foreach($permissions as $permission)
+         <div class="form-check mb-2 form-check-primary">
+        <input class="form-check-input" type="checkbox" name="permission[]" value="{{ $permission->id }}" id="customckeck{{ $permission->id }}"  >
+        <label class="form-check-label" for="customckeck{{ $permission->id }}">{{ $permission->name }}</label>
        </div>
-       
+       @endforeach
+       <br>
+
             </div>
             
         </div> <!-- end row -->
-
+        @endforeach
 
             </div> <!-- end row -->
  
