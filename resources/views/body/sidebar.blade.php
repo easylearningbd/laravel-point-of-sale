@@ -20,6 +20,7 @@
         </li>
 
 
+        @if(Auth::user()->can('pos.menu'))
            <li>
             <a href="{{ route('pos') }}">
                 <span class="badge bg-pink float-end">Hot</span>
@@ -27,7 +28,7 @@
                 <span> POS </span>
             </a>
         </li>
-
+        @endif
 
 
 
@@ -35,44 +36,54 @@
                             <li class="menu-title mt-2">Apps</li>
 
                            
-
-                            <li>
-                                <a href="#sidebarEcommerce" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-cart-outline"></i>
-                                    <span> Employee Manage  </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarEcommerce">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="{{ route('all.employee') }}">All Employee</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('add.employee') }}">Add Employee </a>
-                                        </li>
-                                       
-                                    </ul>
-                                </div>
-                            </li>
-
-                            <li>
-                                <a href="#sidebarCrm" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-account-multiple-outline"></i>
-                                    <span> Customer Manage   </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarCrm">
-                                    <ul class="nav-second-level">
-                    <li>
-                        <a href="{{ route('all.customer') }}">All Customer</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('add.customer') }}">Add Customer</a>
-                    </li>
-                                         
-                                    </ul>
-                                </div>
-                            </li>
+ @if(Auth::user()->can('employee.menu'))
+    <li>
+        <a href="#sidebarEcommerce" data-bs-toggle="collapse">
+            <i class="mdi mdi-cart-outline"></i>
+            <span> Employee Manage  </span>
+            <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="sidebarEcommerce">
+            <ul class="nav-second-level">
+                @if(Auth::user()->can('employee.all'))
+                <li>
+                    <a href="{{ route('all.employee') }}">All Employee</a>
+                </li>
+                @endif
+                @if(Auth::user()->can('employee.add'))
+                <li>
+                    <a href="{{ route('add.employee') }}">Add Employee </a>
+                </li>
+               @endif
+            </ul>
+        </div>
+    </li>
+@endif
+                            
+ @if(Auth::user()->can('customer.menu'))
+            <li>
+                <a href="#sidebarCrm" data-bs-toggle="collapse">
+                    <i class="mdi mdi-account-multiple-outline"></i>
+                    <span> Customer Manage   </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarCrm">
+                    <ul class="nav-second-level">
+     @if(Auth::user()->can('customer.all'))
+    <li>
+        <a href="{{ route('all.customer') }}">All Customer</a>
+    </li>
+    @endif
+     @if(Auth::user()->can('customer.add'))
+    <li>
+        <a href="{{ route('add.customer') }}">Add Customer</a>
+    </li>
+    @endif
+                         
+                    </ul>
+                </div>
+            </li>
+      @endif
 
         <li>
             <a href="#sidebarEmail" data-bs-toggle="collapse">
