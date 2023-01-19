@@ -37,7 +37,7 @@
     <!-- end timeline content-->
 
     <div class="tab-pane" id="settings">
-        <form id="myForm" method="post" action="{{ route('product.store') }}" enctype="multipart/form-data">
+        <form id="myForm" method="post" action="{{ route('admin.store') }}" enctype="multipart/form-data">
         	@csrf
 
             <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Add Admin</h5>
@@ -78,9 +78,12 @@
            
         </div>
     </div>
+ 
+         
+      
 
 
-              <div class="col-md-6">
+      <div class="col-md-6">
         <div class="form-group mb-3">
             <label for="firstname" class="form-label">Asign Roles </label>
             <select name="roles" class="form-select" id="example-select">
@@ -93,25 +96,6 @@
         </div>
     </div>
 
-         
-     
-
-   <div class="col-md-6">
-<div class="form-group mb-3">
-        <label for="example-fileinput" class="form-label">Admin Image</label>
-        <input type="file" name="photo" id="image" class="form-control">
-         
-    </div>
- </div> <!-- end col -->
-
-
-   <div class="col-md-6">
-<div class="mb-3">
-        <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage" src="{{  url('upload/no_image.jpg') }}" class="rounded-circle avatar-lg img-thumbnail"
-                alt="profile-image">
-    </div>
- </div> <!-- end col -->
 
 
 

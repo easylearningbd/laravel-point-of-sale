@@ -49,7 +49,11 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->phone }}</td> 
-                <td> Role </td> 
+                <td> 
+                @foreach($item->roles as $role)
+<span class="badge badge-pill bg-danger"> {{ $role->name }} </span>
+                @endforeach
+                 </td> 
                 <td>
 <a href="{{ route('edit.customer',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Edit</a>
 <a href="{{ route('delete.customer',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
