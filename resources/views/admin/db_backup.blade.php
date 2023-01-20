@@ -50,7 +50,7 @@
                 
 <a href="{{ url($item->getFilename()) }}" class="btn btn-blue rounded-pill waves-effect waves-light">Download </a> 
  
-<a href=" " class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+<a href="{{ url('delete/database/'.$item->getFilename()) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
  
                 </td>
             </tr>

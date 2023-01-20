@@ -235,7 +235,19 @@ class AdminController extends Controller
 
     }// End Method 
 
+    public function DeleteDatabase($getFilename){
 
+        Storage::delete('Easy/'.$getFilename);
+
+         $notification = array(
+            'message' => 'Database Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+
+    }// End Method 
 
 
 }
