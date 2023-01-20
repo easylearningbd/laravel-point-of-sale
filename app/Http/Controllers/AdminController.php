@@ -214,6 +214,29 @@ class AdminController extends Controller
     }// End Method 
 
 
+    public function BackupNow(){
+        \Artisan::call('backup:run');
+
+          $notification = array(
+            'message' => 'Database Backup Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+
+    }// End Method 
+  
+
+    public function DownloadDatabase($getFilename){
+
+        $path = storage_path('app\Easy/'.$getFilename);
+        return response()->download($path);
+
+    }// End Method 
+
+
+
 
 }
  
