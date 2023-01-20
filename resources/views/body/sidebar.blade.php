@@ -293,30 +293,50 @@
 
                             <li class="menu-title mt-2">Custom</li>
 
-                            <li>
-                                <a href="#sidebarAuth" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-account-circle-outline"></i>
-                                    <span>Expense </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarAuth">
-        <ul class="nav-second-level">
-            <li>
-                <a href="{{ route('add.expense') }}">Add Expense</a>
-            </li>
-            <li>
-                <a href="{{ route('today.expense') }}">Today Expense</a>
-            </li>
-            <li>
-                <a href="{{ route('month.expense') }}">Monthly Expense</a>
-            </li>
-            <li>
-                <a href="{{ route('year.expense') }}">Yearly Expense</a>
-            </li>
-            
-        </ul>
-                                </div>
-                            </li>
+                        <li>
+                            <a href="#sidebarAuth" data-bs-toggle="collapse">
+                                <i class="mdi mdi-account-circle-outline"></i>
+                                <span>Expense </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarAuth">
+    <ul class="nav-second-level">
+        <li>
+            <a href="{{ route('add.expense') }}">Add Expense</a>
+        </li>
+        <li>
+            <a href="{{ route('today.expense') }}">Today Expense</a>
+        </li>
+        <li>
+            <a href="{{ route('month.expense') }}">Monthly Expense</a>
+        </li>
+        <li>
+            <a href="{{ route('year.expense') }}">Yearly Expense</a>
+        </li>
+        
+    </ul>
+                            </div>
+                        </li>
+
+
+
+    <li>
+                            <a href="#backup" data-bs-toggle="collapse">
+                                <i class="mdi mdi-account-circle-outline"></i>
+                                <span>Database Backup  </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="backup">
+    <ul class="nav-second-level">
+        <li>
+            <a href="{{ route('database.backup') }}">Database Backup </a>
+        </li> 
+        
+    </ul>
+           </div>
+          </li>
+
+
 
                             <li>
                                 <a href="#sidebarExpages" data-bs-toggle="collapse">

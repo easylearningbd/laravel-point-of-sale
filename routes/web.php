@@ -267,6 +267,8 @@ Route::controller(AdminController::class)->group(function(){
  Route::post('/update/admin','UpdateAdmin')->name('admin.update');
  Route::get('/delete/admin/{id}','DeleteAdmin')->name('delete.admin');
 
+ // Database Backup 
+ Route::get('/database/backup','DatabaseBackup')->name('database.backup');
 
 });
 

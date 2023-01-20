@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use File;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -203,7 +205,13 @@ class AdminController extends Controller
 
     }// End Method 
 
+     //////////////// Database Backup Method //////////////////
 
+    public function DatabaseBackup(){
+
+        return view('admin.db_backup')->with('files',File::allFiles(storage_path('/app/Easy')));
+
+    }// End Method 
 
 
 
