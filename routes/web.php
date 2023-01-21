@@ -212,7 +212,7 @@ Route::controller(OrderController::class)->group(function(){
 
  Route::get('/pending/due','PendingDue')->name('pending.due');
  Route::get('/order/due/{id}','OrderDueAjax');
-
+ Route::post('/update/due','UpdateDue')->name('update.due');
 });
 
 

@@ -154,5 +154,34 @@ class OrderController extends Controller
     }// End Method 
 
 
+    public function UpdateDue(Request $request){
+
+        $order_id = $request->id;
+        $due_amount = $request->due;
+        $pay_amount = $request->pay;
+
+        $allorder = Order::findOrFail($order_id);
+        $maindue = $allorder->due;
+        $maindpay = $allorder->pay;
+ 
+        $paid_due = $maindue - $due_amount;
+        $paid_pay = $maindpay + $due_amount;
+
+        Order::findOrFail($order_id)->update([
+            'due' => $paid_due,
+            'pay' => $paid_pay, 
+        ]);
+
+         $notification = array(
+            'message' => 'Due Amount Updated Successfully',
+            'alert-type' => 'success'
+        ); 
+
+        return redirect()->route('pending.due')->with($notification);
+
+
+    }// End Method 
+
+
 }
  

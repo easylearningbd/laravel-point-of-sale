@@ -35,7 +35,7 @@
                                 <th>Name</th>
                                 <th>Order Date</th>
                                 <th>Payment</th>
-                                <th>Invoice</th>
+                                <th>Total</th>
                                 <th>Pay</th>
                                 <th>Due</th>
                                 <th>Action</th>
@@ -51,7 +51,7 @@
                 <td>{{ $item['customer']['name'] }}</td>
                 <td>{{ $item->order_date }}</td>
                 <td>{{ $item->payment_status }}</td>
-                <td>{{ $item->invoice_no }}</td>
+               <td> <span class="btn btn-info waves-effect waves-light"> {{  $item->total  }}</span> </td>
                 <td> <span class="btn btn-warning waves-effect waves-light"> {{ round($item->pay) }}</span> </td>
                <td> <span class="btn btn-danger waves-effect waves-light"> {{ round($item->due) }}</span> </td>
                 <td>
@@ -94,9 +94,11 @@
                 </div>
  
 
-  <form class="px-3" method="post" action="{{ url('/final-invoice') }}">
+  <form class="px-3" method="post" action="{{ route('update.due') }}">
                     @csrf
- 
+    
+    <input type="hidden" name="id" id="order_id">
+    <input type="hidden" name="pay" id="pay">
 
        <div class="mb-3">
              <label for="username" class="form-label">Pay Now</label>
@@ -126,6 +128,8 @@
                 success:function(data){
                     // console.log(data)
                     $('#due').val(data.due);
+                    $('#pay').val(data.pay);
+                    $('#order_id').val(data.id);
                 }
             })
         }
