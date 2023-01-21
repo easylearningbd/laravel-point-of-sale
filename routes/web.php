@@ -208,6 +208,9 @@ Route::controller(OrderController::class)->group(function(){
  Route::get('/stock','StockManage')->name('stock.manage');
  Route::get('/order/invoice-download/{order_id}','OrderInvoice');
 
+ //// Due All Route 
+
+ Route::get('/pending/due','PendingDue')->name('pending.due');
 
 });
 

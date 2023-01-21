@@ -212,6 +212,10 @@
              <li>
                 <a href="{{ route('complete.order') }}">Complete Orders </a>
             </li>
+
+            <li>
+                <a href="{{ route('pending.due') }}">Pending Due </a>
+            </li>
             
         
         </ul>
