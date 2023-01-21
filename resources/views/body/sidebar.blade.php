@@ -85,6 +85,7 @@
             </li>
       @endif
 
+ @if(Auth::user()->can('supplier.menu'))
         <li>
             <a href="#sidebarEmail" data-bs-toggle="collapse">
                 <i class="mdi mdi-email-multiple-outline"></i>
@@ -103,9 +104,9 @@
                 </ul>
             </div>
         </li>
+@endif
 
-
-
+ @if(Auth::user()->can('salary.menu'))
         <li>
             <a href="#salary" data-bs-toggle="collapse">
                 <i class="mdi mdi-email-multiple-outline"></i>
@@ -132,10 +133,10 @@
                 </ul>
             </div>
         </li>
+@endif
 
 
-
-
+ @if(Auth::user()->can('attendence.menu'))
         <li>
             <a href="#attendence" data-bs-toggle="collapse">
                 <i class="mdi mdi-email-multiple-outline"></i>
@@ -152,8 +153,8 @@
             </div>
         </li>
 
-
-
+@endif
+ @if(Auth::user()->can('category.menu'))
         <li>
             <a href="#category" data-bs-toggle="collapse">
                 <i class="mdi mdi-email-multiple-outline"></i>
@@ -169,8 +170,8 @@
                 </ul>
             </div>
         </li>
-
-
+@endif
+ @if(Auth::user()->can('product.menu'))
          <li>
             <a href="#product" data-bs-toggle="collapse">
                 <i class="mdi mdi-email-multiple-outline"></i>
@@ -194,8 +195,8 @@
             </div>
         </li>
 
-
-
+@endif
+ @if(Auth::user()->can('orders.menu'))
  <li>
     <a href="#orders" data-bs-toggle="collapse">
         <i class="mdi mdi-email-multiple-outline"></i>
@@ -216,8 +217,8 @@
         </ul>
     </div>
 </li>
-
-
+@endif
+ @if(Auth::user()->can('stock.menu'))
  <li>
     <a href="#stock" data-bs-toggle="collapse">
         <i class="mdi mdi-email-multiple-outline"></i>
@@ -234,8 +235,8 @@
         </ul>
     </div>
 </li>
-
-
+@endif
+ @if(Auth::user()->can('roles.menu'))
  <li>
     <a href="#permission" data-bs-toggle="collapse">
         <i class="mdi mdi-email-multiple-outline"></i>
@@ -265,8 +266,8 @@
     </div>
 </li>
 
-
-
+@endif
+ @if(Auth::user()->can('admin.menu'))
  <li>
     <a href="#admin" data-bs-toggle="collapse">
         <i class="mdi mdi-email-multiple-outline"></i>
@@ -286,13 +287,14 @@
         </ul>
     </div>
 </li>
-
+@endif
 
                              
                           
 
                             <li class="menu-title mt-2">Custom</li>
 
+ @if(Auth::user()->can('expense.menu'))
                         <li>
                             <a href="#sidebarAuth" data-bs-toggle="collapse">
                                 <i class="mdi mdi-account-circle-outline"></i>
@@ -318,7 +320,7 @@
                             </div>
                         </li>
 
-
+@endif
 
     <li>
                             <a href="#backup" data-bs-toggle="collapse">
@@ -338,27 +340,7 @@
 
 
 
-                            <li>
-                                <a href="#sidebarExpages" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-text-box-multiple-outline"></i>
-                                    <span> Extra Pages </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarExpages">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="pages-starter.html">Starter</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-timeline.html">Timeline</a>
-                                        </li>
-                                        <li>
-                                            <a href="pages-sitemap.html">Sitemap</a>
-                                        </li>
-                                       
-                                    </ul>
-                                </div>
-                            </li>
+                         
 
                          
  

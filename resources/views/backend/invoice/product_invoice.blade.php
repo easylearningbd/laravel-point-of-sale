@@ -195,11 +195,7 @@
      <input class="form-control" type="text" name="pay" placeholder="Pay Now">
                     </div>
 
-
-                        <div class="mb-3">
-             <label for="username" class="form-label">Due Amount</label>
-     <input class="form-control" type="text" name="due" placeholder="Due Amount ">
-                    </div>
+ 
 
    <input type="hidden" name="customer_id" value="{{ $customer->id }}">
    <input type="hidden" name="order_date" value="{{ date('d-F-Y') }}">

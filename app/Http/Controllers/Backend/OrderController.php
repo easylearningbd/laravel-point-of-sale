@@ -19,6 +19,10 @@ class OrderController extends Controller
 
     public function FinalInvoice(Request $request){
 
+        $rtotal = $request->total;
+        $rpay = $request->pay;
+        $mtotal = $rtotal - $rpay;
+
         $data = array();
         $data['customer_id'] = $request->customer_id;
         $data['order_date'] = $request->order_date;
@@ -31,12 +35,12 @@ class OrderController extends Controller
         $data['total'] = $request->total;
         $data['payment_status'] = $request->payment_status;
         $data['pay'] = $request->pay;
-        $data['due'] = $request->due;
+        $data['due'] = $mtotal;
         $data['created_at'] = Carbon::now(); 
 
         $order_id = Order::insertGetId($data);
         $contents = Cart::content();
-
+ 
         $pdata = array();
         foreach($contents as $content){
             $pdata['order_id'] = $order_id;
