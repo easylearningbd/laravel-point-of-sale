@@ -146,6 +146,12 @@ class OrderController extends Controller
     }// End Method 
 
 
+    public function OrderDueAjax($id){
+
+        $order = Order::findOrFail($id);
+        return response()->json($order);
+
+    }// End Method 
 
 
 }

@@ -53,9 +53,11 @@
                 <td>{{ $item->payment_status }}</td>
                 <td>{{ $item->invoice_no }}</td>
                 <td> <span class="btn btn-warning waves-effect waves-light"> {{ round($item->pay) }}</span> </td>
-               <td> <span class="btn btn-warning waves-effect waves-light"> {{ round($item->due) }}</span> </td>
+               <td> <span class="btn btn-danger waves-effect waves-light"> {{ round($item->due) }}</span> </td>
                 <td>
 <a href="{{ route('order.details',$item->id) }}" class="btn btn-blue rounded-pill waves-effect waves-light"> Details </a> 
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup-modal" id="{{ $item->id }}" onclick="orderDue(this.id)" >Pay Due </button> 
 
                 </td>
             </tr>
@@ -75,6 +77,61 @@
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
+
+
+                 <!-- Signup modal content -->
+<div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body"> 
+                <div class="text-center mt-2 mb-4 ">
+                        <div class="auth-logo">
+                            
+                            <h3> Pay Due Amount </h3>
+                        </div>
+                </div>
+ 
+
+  <form class="px-3" method="post" action="{{ url('/final-invoice') }}">
+                    @csrf
+ 
+
+       <div class="mb-3">
+             <label for="username" class="form-label">Pay Now</label>
+     <input class="form-control" type="text" name="due" id="due"  >
+          </div>
+ 
+
+                    <div class="mb-3 text-center">
+     <button class="btn btn-primary" type="submit">Update Due  </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script type="text/javascript">
+        
+        function orderDue(id) {
+            $.ajax({
+                type: 'GET',
+                url: '/order/due/'+id,
+                dataType: 'json',
+                success:function(data){
+                    // console.log(data)
+                    $('#due').val(data.due);
+                }
+            })
+        }
+
+
+</script>
 
 
 @endsection 

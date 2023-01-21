@@ -211,6 +211,7 @@ Route::controller(OrderController::class)->group(function(){
  //// Due All Route 
 
  Route::get('/pending/due','PendingDue')->name('pending.due');
+ Route::get('/order/due/{id}','OrderDueAjax');
 
 });
 
